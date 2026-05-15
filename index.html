@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Page One Accelerator — Pitch Deck</title>
 <meta name="description" content="Page One Accelerator — a six-week pilot accelerator by Machine Cinema for creative AI projects.">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,16 +13,16 @@
 <!-- Progress bar -->
 <div class="progress"><div class="progress__bar" id="progressBar"></div></div>
 
-<!-- Slide counter / chrome -->
+<!-- Chrome -->
 <div class="deck-chrome">
-  <div class="deck-brand">Machine Cinema <span>&times;</span> Page One</div>
-  <div class="deck-counter"><span id="slideNum">1</span> / <span id="slideTotal">1</span></div>
+  <div class="deck-brand mono">Machine Cinema <span>×</span> Page One</div>
+  <div class="deck-counter mono"><span id="slideNum">1</span> / <span id="slideTotal">1</span></div>
 </div>
 
 <!-- Help -->
 <div class="help" id="help" hidden>
   <div class="help__panel">
-    <h3>Keyboard & gestures</h3>
+    <h3 class="mono">Keyboard &amp; gestures</h3>
     <ul>
       <li><kbd>→</kbd> <kbd>Space</kbd> <kbd>PgDn</kbd> — next</li>
       <li><kbd>←</kbd> <kbd>PgUp</kbd> — back</li>
@@ -30,195 +30,220 @@
       <li><kbd>1</kbd>–<kbd>9</kbd> — jump to slide</li>
       <li><kbd>F</kbd> — fullscreen</li>
       <li><kbd>?</kbd> — toggle this</li>
-      <li>Swipe left/right on touch devices</li>
+      <li>Swipe left/right on touch</li>
     </ul>
-    <button class="help__close" id="helpClose">close</button>
+    <button class="help__close mono" id="helpClose">close</button>
   </div>
 </div>
 
 <main class="deck" id="deck">
 
   <!-- 01 · COVER -->
-  <section class="slide slide--cover" data-bg="cover">
-    <div class="slide__inner">
-      <div class="eyebrow">Cohort 01 &middot; March 2026</div>
-      <h1 class="cover-title">Page&nbsp;One<br><em>Accelerator</em></h1>
-      <p class="cover-sub">A six-week pilot accelerator by Machine Cinema for creative AI projects — from concept to pitchable proof-of-concept.</p>
+  <section class="slide" data-bg="cream">
+    <div class="stack">
+      <div class="eyebrow mono">Cohort 01 · March 2026</div>
+      <h1 class="display">Page<br>One</h1>
+      <p class="lede">A six-week pilot accelerator by Machine Cinema for creative AI projects. Concept to pitchable proof-of-concept.</p>
       <div class="pills">
-        <span class="pill pill--accent">Six-Week Sprint</span>
-        <span class="pill pill--purple">17 Creators</span>
-        <span class="pill">Demo Day · Week 7</span>
+        <span class="pill pill--lime">Six-Week Sprint</span>
+        <span class="pill pill--pink">17 Creators</span>
+        <span class="pill pill--yellow">Demo Day · Week 7</span>
       </div>
     </div>
-    <div class="cover-grad"></div>
+    <div class="corner-mark mono">001 / Page One Accelerator</div>
   </section>
 
   <!-- 02 · WHAT IS PAGE ONE -->
-  <section class="slide" data-bg="default">
-    <div class="slide__inner">
-      <div class="section-label">01 — Welcome</div>
-      <h2>What is <em>Page One</em>?</h2>
-      <p class="lede">A six-week pilot accelerator by Machine Cinema for creative AI projects. We help 17 creators go from concept to a pitchable proof-of-concept, culminating in a Demo Day in front of funders, studios, and distributors.</p>
-      <div class="hl-grid">
-        <div class="hl"><div class="hl__num">6</div><div class="hl__label">Weeks</div></div>
-        <div class="hl"><div class="hl__num">17</div><div class="hl__label">Creators</div></div>
-        <div class="hl"><div class="hl__num">1</div><div class="hl__label">Demo Day</div></div>
+  <section class="slide" data-bg="ink">
+    <div class="stack">
+      <div class="eyebrow eyebrow--ink mono">01 — Welcome</div>
+      <h2 class="h-xxl">What is<br>Page&nbsp;One?</h2>
+      <p class="lede lede--ink">A six-week pilot accelerator by Machine Cinema for creative AI projects. We help 17 creators go from concept to a pitchable proof-of-concept, culminating in a Demo Day in front of funders, studios, and distributors.</p>
+    </div>
+  </section>
+
+  <!-- 03 · BIG NUMBERS -->
+  <section class="slide" data-bg="yellow">
+    <div class="stack">
+      <div class="eyebrow mono">01 — Welcome</div>
+      <h2 class="h-xl">By the numbers</h2>
+      <div class="bignum-grid">
+        <div class="bignum">
+          <div class="bignum__n">6</div>
+          <div class="bignum__l mono">Weeks</div>
+        </div>
+        <div class="bignum">
+          <div class="bignum__n">17</div>
+          <div class="bignum__l mono">Creators</div>
+        </div>
+        <div class="bignum">
+          <div class="bignum__n">1</div>
+          <div class="bignum__l mono">Demo Day</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 03 · THE FOUR PILLARS -->
-  <section class="slide" data-bg="default">
-    <div class="slide__inner">
-      <div class="section-label">02 — The Program</div>
-      <h2>Four pillars</h2>
-      <div class="card-grid card-grid--4">
-        <div class="card">
-          <div class="card__icon">🎯</div>
-          <h3>The Goal</h3>
+  <!-- 04 · THE FOUR PILLARS -->
+  <section class="slide" data-bg="cream">
+    <div class="stack">
+      <div class="eyebrow mono">02 — The Program</div>
+      <h2 class="h-xl">Four pillars</h2>
+      <div class="brick-grid brick-grid--4">
+        <div class="brick brick--lime">
+          <div class="brick__icon">🎯</div>
+          <h3 class="brick__title">The Goal</h3>
           <p>Each participant is building a creative AI project — episodic series, feature films, interactive experiences, transmedia worlds, visual narratives. They leave with a pitch package and a proof-of-concept they can screen.</p>
         </div>
-        <div class="card">
-          <div class="card__icon">👥</div>
-          <h3>The Cohort</h3>
-          <p>17 creators from diverse backgrounds — filmmakers, writers, designers, musicians, technologists, producers. Skill levels with AI tools range from beginner to advanced.</p>
+        <div class="brick brick--pink">
+          <div class="brick__icon">👥</div>
+          <h3 class="brick__title">The Cohort</h3>
+          <p>17 creators from diverse backgrounds — filmmakers, writers, designers, musicians, technologists, producers. Skill levels with AI range from beginner to advanced.</p>
         </div>
-        <div class="card">
-          <div class="card__icon">📍</div>
-          <h3>The Format</h3>
-          <p>Tuesdays in-person, 6–9 PM at Digital Garage, SF. Thursdays online, 6–7:30 PM. Mentors can join either or both — whatever works.</p>
+        <div class="brick brick--yellow">
+          <div class="brick__icon">📍</div>
+          <h3 class="brick__title">The Format</h3>
+          <p>Tuesdays in-person, 6–9 PM at Digital Garage, SF. Thursdays online, 6–7:30 PM. Mentors can join either or both.</p>
         </div>
-        <div class="card">
-          <div class="card__icon">🎤</div>
-          <h3>Demo Day</h3>
-          <p>Week 7. YC-style showcase — 5-minute pitch, screen proof-of-concept, Q&amp;A. Audience includes film funders, studios, streaming platforms, distributors.</p>
+        <div class="brick brick--tan">
+          <div class="brick__icon">🎤</div>
+          <h3 class="brick__title">Demo Day</h3>
+          <p>Week 7. YC-style showcase — 5-minute pitch, screen proof-of-concept, Q&amp;A. Audience: film funders, studios, streaming platforms, distributors.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 04 · COHORT INTRO -->
-  <section class="slide slide--statement" data-bg="cohort">
-    <div class="slide__inner">
-      <div class="section-label">03 — The Cohort</div>
-      <h2 class="big">Meet the<br><em>17 creators</em></h2>
-      <p class="lede">Working across film, episodic content, interactive media, gaming, and transmedia.</p>
+  <!-- 05 · COHORT STATEMENT -->
+  <section class="slide" data-bg="pink">
+    <div class="stack">
+      <div class="eyebrow mono">03 — The Cohort</div>
+      <h2 class="h-xxl">Meet the<br>17 creators.</h2>
+      <p class="lede">Working across film, episodic, interactive, gaming, and transmedia.</p>
       <div class="ticker">
-        <span>Feature Film</span><span>Vertical Episodic</span><span>Transmedia</span><span>Anime</span><span>Musical</span><span>Interactive</span><span>Gaming</span><span>Micro-Drama</span><span>Visual Narrative</span>
+        <span class="ticker__tag">Feature Film</span>
+        <span class="ticker__tag">Vertical Episodic</span>
+        <span class="ticker__tag">Transmedia</span>
+        <span class="ticker__tag">Anime</span>
+        <span class="ticker__tag">Musical</span>
+        <span class="ticker__tag">Interactive</span>
+        <span class="ticker__tag">Gaming</span>
+        <span class="ticker__tag">Micro-Drama</span>
+        <span class="ticker__tag">Visual Narrative</span>
       </div>
     </div>
   </section>
 
-  <!-- 05 · CREATORS 1–4 -->
-  <section class="slide" data-bg="default">
-    <div class="slide__inner">
-      <div class="section-label">03 — The Cohort · 01–04</div>
-      <h2>Creators</h2>
+  <!-- 06 · CREATORS 1–4 -->
+  <section class="slide" data-bg="cream">
+    <div class="stack">
+      <div class="eyebrow mono">03 — The Cohort · 01–04</div>
+      <h2 class="h-l">Creators</h2>
       <div class="creators-grid"></div>
     </div>
   </section>
 
-  <!-- 06 · CREATORS 5–8 -->
-  <section class="slide" data-bg="default">
-    <div class="slide__inner">
-      <div class="section-label">03 — The Cohort · 05–08</div>
-      <h2>Creators</h2>
+  <!-- 07 · CREATORS 5–8 -->
+  <section class="slide" data-bg="lime">
+    <div class="stack">
+      <div class="eyebrow mono">03 — The Cohort · 05–08</div>
+      <h2 class="h-l">Creators</h2>
       <div class="creators-grid"></div>
     </div>
   </section>
 
-  <!-- 07 · CREATORS 9–12 -->
-  <section class="slide" data-bg="default">
-    <div class="slide__inner">
-      <div class="section-label">03 — The Cohort · 09–12</div>
-      <h2>Creators</h2>
+  <!-- 08 · CREATORS 9–12 -->
+  <section class="slide" data-bg="tan">
+    <div class="stack">
+      <div class="eyebrow mono">03 — The Cohort · 09–12</div>
+      <h2 class="h-l">Creators</h2>
       <div class="creators-grid"></div>
     </div>
   </section>
 
-  <!-- 08 · CREATORS 13–17 -->
-  <section class="slide" data-bg="default">
-    <div class="slide__inner">
-      <div class="section-label">03 — The Cohort · 13–17</div>
-      <h2>Creators</h2>
+  <!-- 09 · CREATORS 13–17 -->
+  <section class="slide" data-bg="yellow">
+    <div class="stack">
+      <div class="eyebrow mono">03 — The Cohort · 13–17</div>
+      <h2 class="h-l">Creators</h2>
       <div class="creators-grid"></div>
     </div>
   </section>
 
-  <!-- 09 · WHAT WE ASK -->
-  <section class="slide" data-bg="default">
-    <div class="slide__inner">
-      <div class="section-label">04 — Expectations</div>
-      <h2>What we're asking<br>of <em>mentors</em></h2>
+  <!-- 10 · WHAT WE ASK -->
+  <section class="slide" data-bg="ink">
+    <div class="stack">
+      <div class="eyebrow eyebrow--ink mono">04 — Expectations</div>
+      <h2 class="h-xl">What we're asking of mentors</h2>
       <div class="covered-grid">
-        <div class="covered">
-          <h3>Share what you know</h3>
-          <p>Our participants are looking for perspective from people who've been there. Share honestly.</p>
+        <div class="covered covered--ink">
+          <h3 class="mono">01 / Share what you know</h3>
+          <p>Our participants want perspective from people who've been there. Share honestly.</p>
         </div>
-        <div class="covered">
-          <h3>Give direct, honest feedback</h3>
-          <p>Specificity is generosity. The cohort has opted into a culture of direct, low-ego feedback.</p>
+        <div class="covered covered--ink">
+          <h3 class="mono">02 / Be direct &amp; honest</h3>
+          <p>Specificity is generosity. The cohort opted into a culture of low-ego feedback.</p>
         </div>
-        <div class="covered">
-          <h3>Be available when you can</h3>
-          <p>One session, one creator, one pitch deck review — all of it helps. Tell us what works.</p>
+        <div class="covered covered--ink">
+          <h3 class="mono">03 / Be available</h3>
+          <p>One session, one creator, one pitch deck review — all of it helps.</p>
         </div>
-        <div class="covered">
-          <h3>Respect the creative process</h3>
-          <p>Participants own their projects and IP. Mentorship means guidance, not direction.</p>
+        <div class="covered covered--ink">
+          <h3 class="mono">04 / Respect the process</h3>
+          <p>Participants own their projects and IP. Mentorship is guidance, not direction.</p>
         </div>
-        <div class="covered">
-          <h3>Keep it confidential</h3>
+        <div class="covered covered--ink covered--ink-wide">
+          <h3 class="mono">05 / Keep it confidential</h3>
           <p>Project ideas, pitch materials, and creative work shared in the program are confidential.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 10 · SCHEDULE -->
-  <section class="slide" data-bg="default">
-    <div class="slide__inner">
-      <div class="section-label">05 — Schedule</div>
-      <h2>Program timeline</h2>
+  <!-- 11 · SCHEDULE -->
+  <section class="slide" data-bg="cream">
+    <div class="stack">
+      <div class="eyebrow mono">05 — Schedule</div>
+      <h2 class="h-xl">Program timeline</h2>
       <div class="timeline-wrap">
         <table class="timeline">
           <thead>
             <tr><th>Week</th><th>Theme</th><th>Focus</th></tr>
           </thead>
           <tbody>
-            <tr class="timeline--current">
-              <td class="wk">WK 1</td>
-              <td class="wk-title">Foundation &amp; Ideation</td>
+            <tr class="t-now">
+              <td class="t-wk">WK 1</td>
+              <td class="t-title">Foundation &amp; Ideation</td>
               <td>Introductions, project selection, goal-setting, legal/business context.</td>
             </tr>
             <tr>
-              <td class="wk">WK 2</td>
-              <td class="wk-title">Development Kickoff</td>
+              <td class="t-wk">WK 2</td>
+              <td class="t-title">Development Kickoff</td>
               <td>Tool demos, AI creative workflows, building visual worlds and narrative structure.</td>
             </tr>
             <tr>
-              <td class="wk">WK 3</td>
-              <td class="wk-title">Pitch Prep</td>
+              <td class="t-wk">WK 3</td>
+              <td class="t-title">Pitch Prep</td>
               <td>Pitch structure, storytelling in 5 minutes, early pitch feedback rounds.</td>
             </tr>
             <tr>
-              <td class="wk">WK 4</td>
-              <td class="wk-title">Refinement</td>
+              <td class="t-wk">WK 4</td>
+              <td class="t-title">Refinement</td>
               <td>Story polish, advanced AI workflows, 1-on-1 check-ins.</td>
             </tr>
             <tr>
-              <td class="wk">WK 5</td>
-              <td class="wk-title">Final Polish</td>
+              <td class="t-wk">WK 5</td>
+              <td class="t-title">Final Polish</td>
               <td>Full pitch rehearsals, peer feedback, production quality review.</td>
             </tr>
             <tr>
-              <td class="wk">WK 6</td>
-              <td class="wk-title">Final Rehearsal</td>
+              <td class="t-wk">WK 6</td>
+              <td class="t-title">Final Rehearsal</td>
               <td>Tech check, run-throughs, last mentor feedback, final tweaks.</td>
             </tr>
-            <tr class="timeline--demo">
-              <td class="wk">WK 7</td>
-              <td class="wk-title">Demo Day</td>
+            <tr class="t-demo">
+              <td class="t-wk">WK 7</td>
+              <td class="t-title">Demo Day</td>
               <td>Present to funders, producers, distributors, and industry leaders.</td>
             </tr>
           </tbody>
@@ -227,98 +252,98 @@
     </div>
   </section>
 
-  <!-- 11 · WAYS TO PARTICIPATE -->
-  <section class="slide" data-bg="default">
-    <div class="slide__inner">
-      <div class="section-label">06 — Get Involved</div>
-      <h2>Ways to <em>participate</em></h2>
-      <div class="card-grid card-grid--4">
-        <div class="card card--teal">
-          <div class="card__icon">🎙️</div>
-          <h3>Give a Talk</h3>
+  <!-- 12 · WAYS TO PARTICIPATE -->
+  <section class="slide" data-bg="cream">
+    <div class="stack">
+      <div class="eyebrow mono">06 — Get Involved</div>
+      <h2 class="h-xl">Ways to participate</h2>
+      <div class="brick-grid brick-grid--4">
+        <div class="brick brick--lime">
+          <div class="brick__icon">🎙️</div>
+          <h3 class="brick__title">Give a Talk</h3>
           <p>Lead a 20–45 minute session on something you know deeply. Tuesday in-person or Thursday online.</p>
         </div>
-        <div class="card card--purple">
-          <div class="card__icon">👥</div>
-          <h3>Mentor a Group</h3>
-          <p>Work with 2–4 participants who share a common challenge or medium. Once or twice over the program.</p>
+        <div class="brick brick--pink">
+          <div class="brick__icon">👥</div>
+          <h3 class="brick__title">Mentor a Group</h3>
+          <p>Work with 2–4 participants who share a common challenge. Once or twice over the program.</p>
         </div>
-        <div class="card card--warm">
-          <div class="card__icon">🔍</div>
-          <h3>1-on-1 Reviews</h3>
+        <div class="brick brick--yellow">
+          <div class="brick__icon">🔍</div>
+          <h3 class="brick__title">1-on-1 Reviews</h3>
           <p>Review a creator's pitch, concept, or proof-of-concept. A single 30–60 minute conversation can unlock a breakthrough.</p>
         </div>
-        <div class="card card--accent">
-          <div class="card__icon">🌐</div>
-          <h3>Demo Day &amp; Beyond</h3>
+        <div class="brick brick--tan">
+          <div class="brick__icon">🌐</div>
+          <h3 class="brick__title">Demo Day &amp; Beyond</h3>
           <p>Attend Demo Day as audience, panelist, or connector. Bring funders, distributors, and producers into the room.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 12 · TOPICS -->
-  <section class="slide" data-bg="default">
-    <div class="slide__inner">
-      <div class="section-label">06 — Get Involved</div>
-      <h2>Topics we'd love covered</h2>
+  <!-- 13 · TOPICS -->
+  <section class="slide" data-bg="lime">
+    <div class="stack">
+      <div class="eyebrow mono">06 — Get Involved</div>
+      <h2 class="h-xl">Topics we'd love covered</h2>
       <p class="lede">If any of these resonate with your expertise, we'd love to have you lead a session.</p>
       <div class="topics">
-        <span class="topic">AI Video Generation</span>
-        <span class="topic">Prompt Engineering for Creatives</span>
-        <span class="topic">Pitching to Studios</span>
-        <span class="topic">IP &amp; Copyright in AI</span>
-        <span class="topic">Worldbuilding</span>
-        <span class="topic">Interactive Narrative</span>
-        <span class="topic">Music &amp; Sound Design</span>
-        <span class="topic">Distribution Strategy</span>
-        <span class="topic">Transmedia Storytelling</span>
-        <span class="topic">Game Design &amp; AI</span>
-        <span class="topic">Character Design</span>
-        <span class="topic">VFX &amp; Compositing</span>
-        <span class="topic">Building an Audience</span>
-        <span class="topic">Live Performance + AI</span>
-        <span class="topic">Business Models for AI Content</span>
-        <span class="topic">Fundraising &amp; Grants</span>
+        <span class="topic mono">AI Video Generation</span>
+        <span class="topic mono">Prompt Engineering for Creatives</span>
+        <span class="topic mono">Pitching to Studios</span>
+        <span class="topic mono">IP &amp; Copyright in AI</span>
+        <span class="topic mono">Worldbuilding</span>
+        <span class="topic mono">Interactive Narrative</span>
+        <span class="topic mono">Music &amp; Sound Design</span>
+        <span class="topic mono">Distribution Strategy</span>
+        <span class="topic mono">Transmedia Storytelling</span>
+        <span class="topic mono">Game Design &amp; AI</span>
+        <span class="topic mono">Character Design</span>
+        <span class="topic mono">VFX &amp; Compositing</span>
+        <span class="topic mono">Building an Audience</span>
+        <span class="topic mono">Live Performance + AI</span>
+        <span class="topic mono">Business Models</span>
+        <span class="topic mono">Fundraising &amp; Grants</span>
       </div>
     </div>
   </section>
 
-  <!-- 13 · LOGISTICS -->
-  <section class="slide" data-bg="default">
-    <div class="slide__inner">
-      <div class="section-label">07 — Logistics</div>
-      <h2>Quick reference</h2>
+  <!-- 14 · LOGISTICS -->
+  <section class="slide" data-bg="tan">
+    <div class="stack">
+      <div class="eyebrow mono">07 — Logistics</div>
+      <h2 class="h-xl">Quick reference</h2>
       <div class="reminders">
         <ul>
-          <li><strong>In-Person:</strong> Tuesdays, 6:00–9:00 PM · Digital Garage, San Francisco</li>
-          <li><strong>Online:</strong> Thursdays, 6:00–7:30 PM</li>
-          <li><strong>Program Duration:</strong> 6 weeks + Demo Day (Week 7)</li>
-          <li><strong>Cohort Size:</strong> 17 participants</li>
-          <li><strong>Contact:</strong> Minh — <a href="mailto:hello@machinecinema.ai">hello@machinecinema.ai</a></li>
-          <li><strong>Confidentiality:</strong> All project ideas and creative work shared in the program are confidential</li>
+          <li><strong>In-Person —</strong> Tuesdays, 6:00–9:00 PM · Digital Garage, San Francisco</li>
+          <li><strong>Online —</strong> Thursdays, 6:00–7:30 PM</li>
+          <li><strong>Duration —</strong> 6 weeks + Demo Day (Week 7)</li>
+          <li><strong>Cohort —</strong> 17 participants</li>
+          <li><strong>Contact —</strong> Minh · <a href="mailto:hello@machinecinema.ai">hello@machinecinema.ai</a></li>
+          <li><strong>Confidentiality —</strong> All project ideas and creative work shared in the program are confidential</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- 14 · CTA -->
-  <section class="slide slide--cta" data-bg="cta">
-    <div class="slide__inner">
-      <div class="eyebrow">Your experience changes everything. ✦</div>
-      <h2 class="big">Let's build<br><em>page one</em>.</h2>
-      <p class="lede">Reach out and let us know how you'd like to be involved — talk, mentor a group, review pitches, or just attend a session.</p>
-      <a class="cta-link" href="mailto:hello@machinecinema.ai">hello@machinecinema.ai</a>
-      <div class="footer-meta">
+  <!-- 15 · CTA -->
+  <section class="slide" data-bg="ink">
+    <div class="stack">
+      <div class="eyebrow eyebrow--ink mono">✦ Your experience changes everything.</div>
+      <h2 class="h-xxl">Let's build<br>page one.</h2>
+      <p class="lede lede--ink">Reach out and let us know how you'd like to be involved — talk, mentor a group, review pitches, or attend a session.</p>
+      <a class="cta-link mono" href="mailto:hello@machinecinema.ai">hello@machinecinema.ai</a>
+      <div class="footer-meta mono">
         <span>machinecinema.ai/page-one-accelerator</span>
-        <span>&copy; 2026 Machine Cinema · Cohort 01 · Confidential</span>
+        <span>© 2026 Machine Cinema · Cohort 01 · Confidential</span>
       </div>
     </div>
   </section>
 
 </main>
 
-<button class="back-top" id="helpBtn" title="Help (?)">?</button>
+<button class="back-top mono" id="helpBtn" title="Help (?)">?</button>
 
 <script src="script.js"></script>
 </body>

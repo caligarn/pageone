@@ -19,17 +19,17 @@
     { name: 'Daniel Jacobs',  project: 'AI Improv Show & Multiplayer Creative Game',   medium: 'Interactive / Episodic' },
     { name: 'David Ronan',    project: 'Afterlife Drama — Mother-Son Connection',      medium: 'Feature / Series' },
     { name: 'Vinay',          project: 'To Be Confirmed',                              medium: 'TBD' },
-    { name: 'Mark Day',       project: 'Superhero Battle Engine — Interactive AI',     medium: 'Interactive / Visual Narrative' },
+    { name: 'Mark Day',       project: 'Superhero Battle Engine — Interactive AI',     medium: 'Interactive / Visual' },
     { name: 'Fiona Bai Yu',   project: 'Sci-Fi Epic — Novel-to-Film IP',               medium: 'Episodic / Interactive' },
     { name: 'Tracy Swedlow',  project: 'TV: The Musical',                              medium: 'Musical Series' },
-    { name: 'Mable Huang',    project: 'Episodic Micro-Drama (Rom-Com / Supernatural)', medium: 'Episodic Micro-Drama' },
+    { name: 'Mable Huang',    project: 'Episodic Micro-Drama',                         medium: 'Rom-Com / Supernatural' },
     { name: 'Wenjie',         project: 'AI-Native Social Platform & Gaming',           medium: 'Interactive / Game' },
     { name: 'Paul',           project: 'Katsumi — AI Anime Series',                    medium: 'Anime Episodic' },
     { name: 'Nina',           project: 'Social Drama-Comedy set in Mumbai',            medium: 'Episodic Series' },
     { name: 'Vesica',         project: 'Arcane-Punk Sci-Fi & Historical Narratives',   medium: 'Visual Narrative' }
   ];
 
-  // Distribute creators across 4 cohort slides (5–8 in DOM order)
+  // Distribute creators across cohort slides
   const cohortSlides = slides.filter((s) => s.querySelector('.creators-grid'));
   const batches = [
     creators.slice(0, 4),
@@ -62,14 +62,8 @@
 
   function go(n) {
     n = Math.max(0, Math.min(total - 1, n));
-    if (n === current) {
-      slides[n].classList.add('is-active');
-      return;
-    }
-    slides[current].classList.remove('is-active');
-    slides[n].classList.add('is-active');
-    slides[n].scrollTop = 0;
     current = n;
+    deck.style.transform = `translateX(-${n * 100}vw)`;
     slideNumEl.textContent = n + 1;
     progressBar.style.width = ((n + 1) / total * 100) + '%';
     if (history.replaceState) {
@@ -88,9 +82,15 @@
   initFromHash();
   window.addEventListener('hashchange', initFromHash);
 
+  // ── Keep slide position correct on resize ───────────────────────────────
+  window.addEventListener('resize', () => {
+    deck.style.transition = 'none';
+    deck.style.transform = `translateX(-${current * 100}vw)`;
+    void deck.offsetWidth;
+    deck.style.transition = '';
+  });
+
   // ── Keyboard ────────────────────────────────────────────────────────────
-  // Forward: ArrowRight, ArrowDown, PageDown, Space, Enter
-  // Back:    ArrowLeft,  ArrowUp,   PageUp,   Backspace
   document.addEventListener('keydown', (e) => {
     if (e.target && /input|textarea|select/i.test(e.target.tagName)) return;
     const k = e.key;
@@ -117,7 +117,7 @@
   const isTouch = matchMedia('(hover: none)').matches;
   if (!isTouch) {
     deck.addEventListener('click', (e) => {
-      if (e.target.closest('a, button, input, textarea, .creator, .card, .topic, .pill')) return;
+      if (e.target.closest('a, button, input, textarea, .creator, .brick, .topic, .pill, .ticker__tag, .reminders')) return;
       const x = e.clientX / window.innerWidth;
       if (x > 0.55) next();
       else if (x < 0.45) prev();
@@ -134,7 +134,7 @@
     const t = e.changedTouches[0];
     const dx = t.clientX - touchStart.x;
     const dy = t.clientY - touchStart.y;
-    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.2) {
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.2) {
       if (dx < 0) next(); else prev();
     }
     touchStart = null;
