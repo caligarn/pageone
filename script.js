@@ -29,31 +29,20 @@
     { name: 'Vesica',         project: 'Arcane-Punk Sci-Fi & Historical Narratives',   medium: 'Visual Narrative' }
   ];
 
-  // Distribute creators across cohort slides
-  const cohortSlides = slides.filter((s) => s.querySelector('.creators-grid'));
-  const batches = [
-    creators.slice(0, 4),
-    creators.slice(4, 8),
-    creators.slice(8, 12),
-    creators.slice(12, 17)
-  ];
-  cohortSlides.forEach((slide, i) => {
-    const grid = slide.querySelector('.creators-grid');
-    const batch = batches[i] || [];
-    const startIdx = batches.slice(0, i).reduce((acc, b) => acc + b.length, 0);
-    batch.forEach((c, j) => {
-      const idx = startIdx + j + 1;
+  // Render all creators into the cohort slide
+  const grid = deck.querySelector('.creators-grid');
+  if (grid) {
+    creators.forEach((c, i) => {
       const card = document.createElement('div');
       card.className = 'creator';
       card.innerHTML = `
-        <div class="creator__num">${String(idx).padStart(2, '0')}</div>
+        <div class="creator__num">${String(i + 1).padStart(2, '0')}</div>
         <h3>${c.name}</h3>
-        <div class="creator__project">${c.project}</div>
         <span class="creator__medium">${c.medium}</span>
       `;
       grid.appendChild(card);
     });
-  });
+  }
 
   // ── Navigation ──────────────────────────────────────────────────────────
   let current = 0;
