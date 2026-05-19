@@ -8,37 +8,27 @@
   const helpBtn = document.getElementById('helpBtn');
   const helpClose = document.getElementById('helpClose');
 
-  // ── Creator data ────────────────────────────────────────────────────────
+  // ── Cohort ──────────────────────────────────────────────────────────────
   const creators = [
-    { name: 'Heidi',          project: 'Feature Film — Earth to Mars',                 medium: 'Feature Film' },
-    { name: 'Eileen',         project: 'Short-Form Vertical Series',                   medium: 'Episodic Vertical' },
-    { name: 'Valerie',        project: 'Open / Looking to Collaborate',                medium: 'TBD' },
-    { name: 'Senait',         project: 'Vertical Series or TV Pilot',                  medium: 'Episodic / TV Pilot' },
-    { name: 'Adam Mutchler',  project: 'Choice Cascades — Rapid Vertical Series',      medium: 'Vertical Episodic' },
-    { name: 'Caitlyn Croft',  project: 'Transmedia — Immersive Story Concerts',        medium: 'Transmedia / Interactive' },
-    { name: 'Daniel Jacobs',  project: 'AI Improv Show & Multiplayer Creative Game',   medium: 'Interactive / Episodic' },
-    { name: 'David Ronan',    project: 'Afterlife Drama — Mother-Son Connection',      medium: 'Feature / Series' },
-    { name: 'Vinay',          project: 'To Be Confirmed',                              medium: 'TBD' },
-    { name: 'Mark Day',       project: 'Superhero Battle Engine — Interactive AI',     medium: 'Interactive / Visual' },
-    { name: 'Fiona Bai Yu',   project: 'Sci-Fi Epic — Novel-to-Film IP',               medium: 'Episodic / Interactive' },
-    { name: 'Tracy Swedlow',  project: 'TV: The Musical',                              medium: 'Musical Series' },
-    { name: 'Mable Huang',    project: 'Episodic Micro-Drama',                         medium: 'Rom-Com / Supernatural' },
-    { name: 'Wenjie',         project: 'AI-Native Social Platform & Gaming',           medium: 'Interactive / Game' },
-    { name: 'Paul',           project: 'Katsumi — AI Anime Series',                    medium: 'Anime Episodic' },
-    { name: 'Nina',           project: 'Social Drama-Comedy set in Mumbai',            medium: 'Episodic Series' },
-    { name: 'Vesica',         project: 'Arcane-Punk Sci-Fi & Historical Narratives',   medium: 'Visual Narrative' }
+    'Adam Mutchler',
+    'Tracy',
+    'Vesica',
+    'Daniel Jacobs',
+    'David Ronan',
+    'Blair Adams',
+    'Eileen / Mark / Roshni',
+    'Anand / Ian',
+    'Paul Byrd'
   ];
 
-  // Render all creators into the cohort slide
   const grid = deck.querySelector('.creators-grid');
   if (grid) {
-    creators.forEach((c, i) => {
+    creators.forEach((name, i) => {
       const card = document.createElement('div');
       card.className = 'creator';
       card.innerHTML = `
         <div class="creator__num">${String(i + 1).padStart(2, '0')}</div>
-        <h3>${c.name}</h3>
-        <span class="creator__medium">${c.medium}</span>
+        <h3>${name}</h3>
       `;
       grid.appendChild(card);
     });
