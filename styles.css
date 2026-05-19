@@ -246,7 +246,7 @@ a:hover { text-decoration-color: var(--pink); }
 .bignum__n {
   font-family: "Inter", sans-serif;
   font-weight: 900;
-  font-size: clamp(5rem, 12vw, 12rem);
+  font-size: clamp(3.4rem, 8vw, 7rem);
   line-height: 1;
   letter-spacing: -0.05em;
   color: var(--ink);
